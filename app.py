@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from enhance import image_enhance
 from skimage.morphology import skeletonize, thin
 
-os.chdir("/app/")
+#os.chdir("/app/")
 
 def removedot(invertThin):
     temp0 = numpy.array(invertThin[:])
@@ -71,12 +71,12 @@ def get_descriptors(img):
 
 
 def main():
-	image_name = sys.argv[1]
-	img1 = cv2.imread("database/" + image_name, cv2.IMREAD_GRAYSCALE)
+	#image_name = sys.argv[1]
+	img1 = cv2.imread("database/" + 'hola.bmp', cv2.IMREAD_GRAYSCALE)
 	kp1, des1 = get_descriptors(img1)
 
-	image_name = sys.argv[2]
-	img2 = cv2.imread("database/" + image_name, cv2.IMREAD_GRAYSCALE)
+	#image_name = sys.argv[2]
+	img2 = cv2.imread("database/" + 'imagen7.bmp', cv2.IMREAD_GRAYSCALE)
 	kp2, des2 = get_descriptors(img2)
 
 	# Matching between descriptors
@@ -98,7 +98,7 @@ def main():
 	score = 0;
 	for match in matches:
 		score += match.distance
-	score_threshold = 33
+	score_threshold = 33 
 	if score/len(matches) < score_threshold:
 		print("Fingerprint matches.")
 	else:
