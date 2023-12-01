@@ -71,12 +71,12 @@ def get_descriptors(img):
 
 
 def main():
-	#image_name = sys.argv[1]
-	img1 = cv2.imread("database/" + 'hola.bmp', cv2.IMREAD_GRAYSCALE)
+	image_name = sys.argv[1]
+	img1 = cv2.imread("database/" + image_name, cv2.IMREAD_GRAYSCALE)
 	kp1, des1 = get_descriptors(img1)
 
-	#image_name = sys.argv[2]
-	img2 = cv2.imread("database/" + 'imagen7.bmp', cv2.IMREAD_GRAYSCALE)
+	image_name = sys.argv[2]
+	img2 = cv2.imread("database/" + image_name, cv2.IMREAD_GRAYSCALE)
 	kp2, des2 = get_descriptors(img2)
 
 	# Matching between descriptors
